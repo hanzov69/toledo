@@ -13,11 +13,13 @@
     
     1.1 Which signs does toledo support?
     
-        To be perfectly honest, I believe it will support 99% of the amplus boards, but I can't be certain. The reason is, I only have two boards
-        to test it against. Thus, the official answer will be:
-        AM04142
-        AM03128-H13
-        (for e-Badge support, see http://freezerpants.com/toledo/)
+    To be perfectly honest, I believe it will support 99% of the amplus boards, but I can't be certain. The reason is, I only have two boards to test it against. Thus, the official answer will be:
+    
+    AM04142
+    
+    AM03128-H13
+    
+    (for e-Badge support, see https://github.com/hanzov69/tobadge/)
         
 2. Installing
 
