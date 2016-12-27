@@ -59,6 +59,7 @@ def main(argv):
     global _version
     global _output
     global _debug
+    global _stdout
     
     _port       = "COM7"
     _message    = "snicklfritz982342"
@@ -79,9 +80,10 @@ def main(argv):
     _version    = "0.0.4.3"
     _output     = 0
     _debug      = 0
+    _stdout		= 0
    
     try:
-        opts, args = getopt.getopt(argv, "hvof:s:l:m:p:c:", ["help", "raw=", "version", "output", "font=", "sid=", "line=", "message=", "port=", "intro=", "exit=", "speed=", "bell=", "color=", "date", "time", "link=", "page=", "runpage=", "debug"])
+        opts, args = getopt.getopt(argv, "hnsvof:s:l:m:p:c:", ["help","stdout", "raw=", "version", "output", "font=", "sid=", "line=", "message=", "port=", "intro=", "exit=", "speed=", "bell=", "color=", "date", "time", "link=", "page=", "runpage=", "debug"])
     except getopt.GetoptError:
         usage()
         sys.exit(2)
@@ -90,6 +92,8 @@ def main(argv):
         if opt in ("-h", "--help"):
             usage()
             sys.exit()
+        if opt in ("-n", "--stdout"):
+            _stdout = 1
         if opt in ("--raw"):
             _raw = arg
             toraw()
@@ -369,6 +373,7 @@ def usage():
     print "                    <IDn> and XOR checksum"
     print "-m (--message=)   Set the desired message (call this flag before output)"
     print "-o (--output)     Output to sign (call this flag last)"
+    print "-n (--stdout)     Only print command, no serial connection"
     print ""
     print "-------------------------------------------------------------------------"
     print 'example: ./toledo.py --link="ABACAB" --output'
@@ -379,6 +384,9 @@ def usage():
 
 def serout(finalMessage):
    # set up serial port
+    if (_stdout == 1):
+		print finalMessage
+		return
     ser = serial.Serial(_port, 9600, timeout=3)
     
     # clear out the buffer 
