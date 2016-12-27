@@ -135,7 +135,7 @@
     Please see http://creativecommons.org/licenses/by-nc-sa/3.0/us/
 
     If you find this software useful, have problems or suggestions,
-    Please email me at hanzo@freezerpants.com
+    Please email me at Hanzo[.at.]freezerpants[.dot.]com
     If you wish to host this software elsewhere, please provide a link to
     http://freezerpants.com and credit to Christian Sullivan
     
